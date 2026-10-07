@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>My Hobbies</title>
+</head>
+
+<body>
+
+    <!-- Dropdown Menu -->
+    <div class="dropdown">
+
+        <!-- Cake Button -->
+         <h1 class="Drop">Eat CheeseCake</h1>
+        <button class="dropbtn">
+            <img src="cake.png" alt="Menu">
+        </button>
+
+        <!-- Menu -->
+        <div id="myDropdown" class="dropdown-content">
+            <a href="index.html">About Me <span></span></a>
+            <a href="Home.html">Education <span></span></a>
+                 <a href="https://github.com/Izzyb0706" target="_blank">
+    GitHub <span></span>
+</a>
+            <a href="Hobbies.html">Hobbies <span></span></a>
+        </div>
+
+    </div>
+
+
+    <h1>My Hobbies</h1>
+     
+
+    <script>
+
+        // Open and close the dropdown
+        document.querySelector(".dropbtn").addEventListener("click", function() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        });
+
+
+        // Close dropdown when clicking outside
+        window.addEventListener("click", function(event) {
+            if (!event.target.closest(".dropdown")) {
+                document.getElementById("myDropdown").classList.remove("show");
+            }
+        });
+
+
+        // Automatically show which page you are currently on
+        const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+
+        const links = document.querySelectorAll(".dropdown-content a");
+
+        links.forEach(function(link) {
+
+            const linkPage = link.getAttribute("href").split("/").pop().toLowerCase();
+
+            if (currentPage === linkPage) {
+                link.classList.add("active");
+                link.querySelector("span").textContent = "✓";
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

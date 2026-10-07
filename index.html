@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>About Me</title>
+</head>
+
+<body>
+
+    <!-- Dropdown Menu -->
+    <div class="dropdown">
+
+        <!-- Cake Button -->
+         <h1 class="Drop">Eat CheeseCake</h1>
+        <button class="dropbtn">
+            <img src="cake.png" alt="Menu">
+        </button>
+
+        <!-- Menu -->
+        <div id="myDropdown" class="dropdown-content">
+            <a href="index.html">About Me <span></span></a>
+            <a href="Home.html">Education <span></span></a>
+            <a href="https://github.com/Izzyb0706" target="_blank">
+    GitHub <span></span>
+</a>
+            <a href="Hobbies.html">Hobbies <span></span></a>
+        </div>
+
+    </div>
+
+
+    <h1>Introduction</h1>
+
+    <p class="bio">
+        Welcome to my website! This website is a place where I can share more
+        about myself, my personality, my interests, hobbies, experiences, and
+        the things that are important to me. I created this site as a way to
+        bring everything together in one place and give people a better idea
+        of who I am and what I enjoy.
+
+        <br><br>
+
+        Here, you’ll be able to learn more about me, explore some of my
+        favorite interests, and discover the different things that I spend
+        my time doing. I’ve always enjoyed having different hobbies and
+        interests, and this website gives me a place to document them, share
+        them with others, and look back on them over time.
+
+        <br><br>
+        
+  <div class="image-container">
+    <img src="/images/me.jpg" alt="Me">
+    <img src="/images/pic.jpg" alt="pic">
+    <img src="/images/icecream.jpg" alt="icecream">
+</div>
+
+
+
+        <h1>Fun Facts</h1>
+<div class="card-container">
+        <div class="card card">
+<!-- Card Image --><div class="card-body">
+<h2 class="card-title">Favorite Color -</h2>
+<p class="card-text">Baby Blue </p>
+
+</div>
+<img src="/images/blue.jpg" alt="Card Header Image" class="card-image">
+<!-- Card Body Content -->
+
+</div>
+ <br><br>
+
+         <div class="card1 card">
+<!-- Card Image --><div class="card-body">
+<h2 class="card-title">Favorite Food -</h2>
+<p class="card-text">Chicken Alfredo </p>
+
+</div>
+<img src="/images/Alfredo.png" alt="Card Header Image" class="card-image">
+<!-- Card Body Content -->
+
+</div>
+ <br><br>
+
+        <div class="card2 card">
+<!-- Card Image --><div class="card-body">
+<h2 class="card-title">Favorite Candy -</h2>
+<p class="card-text">Watermelon Sour Patch Kids </p>
+
+</div>
+<img src="/images/Sour Patch.webp" alt="Card Header Image" class="card-image">
+<!-- Card Body Content -->
+
+</div>
+ <br><br>
+</div>
+    <script>
+
+        // Open and close the dropdown
+        document.querySelector(".dropbtn").addEventListener("click", function() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        });
+
+
+        // Close dropdown when clicking outside
+        window.addEventListener("click", function(event) {
+            if (!event.target.closest(".dropdown")) {
+                document.getElementById("myDropdown").classList.remove("show");
+            }
+        });
+
+
+        // Automatically show which page you are currently on
+        const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+
+        const links = document.querySelectorAll(".dropdown-content a");
+
+        links.forEach(function(link) {
+
+            const linkPage = link.getAttribute("href").split("/").pop().toLowerCase();
+
+            if (currentPage === linkPage) {
+                link.classList.add("active");
+                link.querySelector("span").textContent = "✓";
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
